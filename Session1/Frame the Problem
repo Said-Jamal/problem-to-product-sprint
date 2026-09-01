@@ -1,0 +1,36 @@
+Session-1
+
+Title: Raw Material Stock Tracking Problem
+Submitted by: Laman Aghayeva, Said Jamalov
+
+Problem Statement
+
+Production shop workers at Giltex (weaving and dyeing sections) experience raw material shortages (yarn, dye, chemicals) because stock levels are not tracked digitally, which causes production lines to stop and shipments to be delayed.
+
+Problem Framing Canvas
+
+Problem: Raw material stock is tracked manually and informally, so shortages are only discovered once material actually runs out.
+Who is affected: Weaving and dyeing shop workers, warehouse/supply staff, production managers, and ultimately customers waiting on shipments.
+Current state: Stock levels are checked by eye or memory. When material runs low, the shop worker informs the warehouse verbally or via WhatsApp.
+Desired state: Stock levels are visible in real time, with an early warning before material runs out.
+Trigger: A shop is about to start a new batch and discovers there isn't enough yarn, dye, or chemicals on hand.
+Constraints: No existing digital inventory system, limited budget, must fit the current shop-floor workflow.
+Out of scope: Supplier negotiation/pricing, machinery upgrades, redesigning the dyeing process itself.
+Success metric: Reduction in the number and average duration of production stoppages per month caused by raw material shortages.
+Evidence Ledger
+
+Observation — Personal experience at Giltex production floor — 2026 — If wrong: shortages are rare, the problem's urgency collapses.
+Process claim — Internal communication (verbal/WhatsApp ordering) — 2026 — If wrong: ordering is already digital, the root cause is invalid.
+Estimate — Shop-floor observation of stoppage frequency — 2026 — If wrong: stoppages aren't tied to stock, the cost calculation is wrong.
+Cost estimate — Estimated labor hours lost during stoppages — 2026 — If wrong: downtime cost is negligible, the business case weakens.
+Downstream impact — Observed delay in shipment timelines — 2026 — If wrong: delays aren't linked to this cause, the customer-impact argument fails.
+5 WHY Analysis
+
+Why does production stop? → Raw material runs out before a new batch starts.
+Why does it run out? → The order is placed only after the shortage is noticed.
+Why is it noticed so late? → Stock levels are not tracked in real time.
+Why aren't they tracked in real time? → There is no digital inventory system, only manual/verbal checks.
+Why has no system been set up? → The real cost of these stoppages has never been measured in numbers.
+Why It Matters
+
+Every undetected shortage doesn't just stop one machine, it delays every downstream stage (dyeing, QC, packaging, shipment), and the true cost in lost labor hours and delayed customer orders has never been quantified. That absence of visibility is what keeps the problem hidden until it's already too late to prevent.
