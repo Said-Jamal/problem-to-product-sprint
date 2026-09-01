@@ -1,4 +1,4 @@
-# Problem-to-Product Sprint - Ctrl+Solve
+# Problem-to-Product Sprint
 
 This repository holds our final project from the **Problem-to-Product Sprint**, a 9-session program led by **Nijat Hajiyev** (Nexus Adv).
 
