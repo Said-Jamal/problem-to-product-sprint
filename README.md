@@ -1,71 +1,54 @@
-# Problem-to-Product Sprint
+# Problem-to-Product Sprint - Ctrl+Solve
 
-This repository holds our final project from the **Problem-to-Product Sprint**, a program led by **Nijat Hajiyev** (Nexus Adv).
-
-We worked on a real business problem for a real company, from start to finish - finding the problem, analysing the data, mapping the process, designing a solution, and building a working prototype.
+This is our final project from the Problem-to-Product Sprint, a  program by Nijat Hajiyev (Nexus Adv). We are Ctrl+Solve: Said Jamalov and Laman Aghayeva.
 
 
-## The Team - Ctrl+Solve
+## The problem
 
-- **Said Jamalov**
-- **Laman Aghayeva**
+A worker starts a new batch. He checks the material by eye or by memory. Sometimes the material is not enough. The line stops. He tells the warehouse by phone. Nobody writes it down. Then everyone waits for material.
 
-We came from different backgrounds, but we worked as one team. Every deliverable in this repo is the result of many hours of thinking, arguing, testing, and rewriting together.
+One number stayed in our heads: 0%.
 
+No shortage was ever found early. Not once. Nobody checked the stock before the batch, so the problem always appeared at the last moment, when the worker was already at the machine, ready to work. And then the line stopped.
 
-## The Problem
-
-Our problem was from a textile manufacturer in Azerbaijan. Their production lines were stopping because raw materials (yarn, dye, chemicals) were running out - but nobody knew until the batch was about to start.
-
-The numbers:
-- **15-16 hours** of line stoppage, on average, every time a shortage happened
-- **~2.22M AZN per year** in estimated total cost
-- **0%** of shortages caught before the line stopped
-- **Dyeing shop** carried around **60-63%** of the cost - the same finding held in two separate datasets
+The average wait was 15 to 16 hours. Every time. The cost, over one year, came close to 2.22 million AZN.
 
 
-##  Our Solution
+## Where to start
 
-A **Proactive Stock Threshold Alert system** - a simple idea that changes the timing of everything.
+The company has only two shops: Weaving and Dyeing. We had two data files about the shortages. The two files did not show the same numbers on every point. But on one thing, both files agreed.
 
-Instead of finding out about a shortage when the worker walks up to an empty rack, the system checks stock automatically and sends an alert to the warehouse and production manager **before** the batch is scheduled.
+The Dyeing shop is the biggest part of the problem. Around 60 to 63% of the total cost comes from this one shop only. This was the same in both files, so we trusted it.
 
-No AI in v1. Just a clear rule: *if stock is below the threshold, alert everyone at the same time.*
-
- **Live prototype:** [Open the working demo](https://claude.ai/public/artifacts/28004bb8-fa48-4568-9f9b-68037142128d)
+We did not try to fix everything at the same time. We chose the shop with the biggest cost, and we started there. If we fix the biggest place first, we fix the biggest part of the problem.
 
 
-## What's in this Repository
+## The maps
 
-What you'll find : 
-All session submissions (Session 2-5) and the full Product Brief 
-As-Is and To-Be process maps (PDF) 
-The HTML prototype file - same as the live link above 
+We did not start with a tool. We started with a map.
+
+First we drew the AS-IS map: what really happens today. 16 steps, 4 lanes, and 4 rework loops. People doing the same work again and again.
+
+Then we drew the TO-BE map: what we want instead. The idea is simple. The system checks the stock against a limit (daily use × delivery time + safety buffer). If the stock goes under that limit, an alert goes to the warehouse and the manager, before the batch starts.
+
+16 steps became 10. 4 lanes became 3. 4 loops became 0.
+
+The hard part was not the solution. The hard part was seeing the process honestly, with all its ugly loops. When we saw it clearly, the solution became easy.
+
+
+## The prototype
+
+We built a small working app to show the core loop: see the stock, see the alert, click to notify, see it in the log.
+
+No AI in this version. Just a simple rule: if stock is below the limit, tell everyone at the same time. A rule is faster, cheaper, and easy to check. AI can come later, when we have real order history to learn from.
+
+You can open the live demo here: https://claude.ai/public/artifacts/28004bb8-fa48-4568-9f9b-68037142128d
 
 
 
-##  What We Learned
+## Thanks
 
-- **Honesty beats polish.** Our acceptance tests came back **0 pass, 4 fail, 1 not verified** - and we reported it that way in every document. It felt uncomfortable at first, but it made the work stronger.
-- **Two datasets can tell two different stories.** We had two files that did not agree with each other. Instead of picking one and moving on, we flagged the conflict everywhere it appeared.
-- **Small scope is not weakness.** Our prototype only does one thing - the core alert loop. That was a deliberate choice, and we explained the gap between the prototype and the fuller Product Brief openly.
-- **The riskiest assumption is usually about people, not tech.** The whole design depends on warehouse staff logging stock consistently. If that habit does not form, the tool is useless. We never hid this.
+To Nijat HAJIYEV, for teaching this sprint and for the honest feedback. To the Nexus Adv team, for the method behind this work. And to each other, for finishing it together.
 
----
-
-## 🙏 Thanks
-
-To **Nijat Hajiyev** - for teaching this sprint, for the honest feedback, and for pushing us to think one level deeper. To **Nexus Adv** - for making this program possible.
-
-And to each other, as a team. In a room full of working professionals (data analysts, product managers, business analysts), we finished this sprint side by side with them.
-
----
-
-## 🔗 Related
-
-- LinkedIn hashtag: **#ProblemToProduct**
-- LinkedIn post series: 3 posts covering the sprint story, the problem + process maps, and the prototype
-
----
 
 *This project was a training exercise. Numbers, names, and details are shared for learning purposes.*
